@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ICall" parent="android:Theme.Material.Light.NoActionBar" />
+    
+    <style name="Theme.SplashScreenTheme.Splash" parent="Theme.SplashScreen">
+        <!-- App Logo -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splashscreenicon</item>
+        <!-- BackGround Color -->
+        <item name="windowSplashScreenBackground">#FFFFFF</item>
+        <!-- Icon Scale  -->
+        <item name="windowSplashScreenIconBackgroundColor">#FFFFFF</item>
+        <!-- Apply your main theme after splash ends -->
+        <item name="postSplashScreenTheme">@style/Theme.ICall</item>
+    </style>
+</resources>

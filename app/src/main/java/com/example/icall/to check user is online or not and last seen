@@ -1,0 +1,6 @@
+Real-time updates	✅ Firebase Realtime Database / Firestore
+Detect online/offline status	✅ Firebase .info/connected or Presence System
+Show "Last Seen"	✅ Timestamp management + Cloud DB
+User identification	✅ Firebase Authentication
+App foreground/background state	✅ LifecycleObserver / ProcessLifecycleOwner
+Update Compose UI	✅ Jetpack Compose state management (remember, collectAsState)
