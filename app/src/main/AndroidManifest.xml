@@ -2,6 +2,61 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+
+    <!--    add permissions ot use SIP api in your app -->
+
+    <!--    This is the specific permission that allows your application to use the Android SIP API.-->
+    <uses-permission android:name="android.permission.USE_SIP" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!--    Why filtering?-->
+    <!--    Without uses-feature declarations, your app might get installed on a device that technically runs -->
+    <!--    Android 2.3+ but lacks SIP software, a microphone, or Wi-Fi, leading to a broken user experience.-->
+
+    <!--    To control how your application is filtered from devices that do not support SIP (for example, on Google Play), add the following to your application's manifest:-->
+    <!--    <uses-feature android:name="android.software.sip.voip" />... -->
+    <!--    The declaration should include an android:required attribute that indicates whether you want the application to be filtered from devices that do not offer SIP support."-->
+
+
+    <!--    <uses-feature> tags are critical for device filtering on app stores like Google Play. They tell the store what hardware or software features your app needs to function.-->
+
+    <!--    android.software.sip.voip: This specific feature declaration tells the system and Google Play that your app requires SIP/VOIP software support.-->
+
+    <!--   android:required="true" - This is key! If you set this to true, Google Play will hide your app from users whose devices do not support SIP/VOIP at the software level.-->
+
+    <!--    SIP often runs best over Wi-Fi, and your app likely needs a network connection. Setting android:required="true" here means the device must have Wi-Fi hardware.-->
+    <!--    (While mobile data also works, Wi-Fi is often preferred for VOIP quality and data usage).-->
+
+    <!--    For any voice or video call, a microphone is essential! Setting android:required="true" ensures the device has a microphone.-->
+
+    <uses-feature
+        android:name="android.software.sip.voip"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +67,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ICall"
         tools:targetApi="31">
+
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
@@ -58,4 +59,22 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.splashscreen)
     implementation(libs.androidx.navigation)
+
+    implementation ("com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:+")
+
+    // ZegoCloud SignalingPlugin (Required for call invitations)
+    implementation ("com.github.ZEGOCLOUD:zego_uikit_signaling_plugin_android:2.+")
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-database")
+
+
+    implementation ("androidx.appcompat:appcompat:1.7.1")
+    // You might also need this if it's not implicitly pulled by appcompat
+    implementation ("androidx.core:core-ktx:1.12.0")
+
+
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "322108591994",
+    "project_id": "icall-6a0ab",
+    "storage_bucket": "icall-6a0ab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322108591994:android:b5ae3de566d7d8181e90c3",
+        "android_client_info": {
+          "package_name": "com.example.icall"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYf5aXoUY1dXrHYp0xEIOH_cRljxDK_GQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
